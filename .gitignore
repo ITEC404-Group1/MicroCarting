@@ -2,13 +2,27 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
+/[Ll]ibrary/APIUpdater/
+/[Ll]ibrary/Artifacts/
+/[Ll]ibrary/BuildPlayerData/
+/[Ll]ibrary/BurstCache/
+/[Ll]ibrary/PackageCache/
+/[Ll]ibrary/PackageManager/
+/[Ll]ibrary/PlayerDataCache/
+/[Ll]ibrary/ScriptAssemblies/
+/[Ll]ibrary/ShaderCache/
+/[Ll]ibrary/TempArtifacts/
+/[Ll]ibrary/UIElements/
+# /[Ll]ibrary/StateCache/
+# /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -48,9 +62,9 @@ ExportedObj/
 *.VC.db
 
 # Unity3D generated meta files
-# *.pidb.meta
-# *.pdb.meta
-# *.mdb.meta
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
@@ -69,3 +83,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+
+!/[Ll]ibrary/StateCache/*
+!/Llibrary/LastSceneManagerSetup.txt
