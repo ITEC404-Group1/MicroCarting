@@ -2,19 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/APIUpdater/
-/[Ll]ibrary/Artifacts/
-/[Ll]ibrary/BuildPlayerData/
-/[Ll]ibrary/BurstCache/
-/[Ll]ibrary/PackageCache/
-/[Ll]ibrary/PackageManager/
-/[Ll]ibrary/PlayerDataCache/
-/[Ll]ibrary/ScriptAssemblies/
-/[Ll]ibrary/ShaderCache/
-/[Ll]ibrary/TempArtifacts/
-/[Ll]ibrary/UIElements/
-# /[Ll]ibrary/StateCache/
-# /[Ll]ibrary/
+/[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -83,7 +71,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
-
-!/[Ll]ibrary/StateCache/*
-!/Llibrary/LastSceneManagerSetup.txt
