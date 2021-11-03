@@ -36,6 +36,7 @@ namespace KartGame.AI
     {
 #region Training Modes
         [Tooltip("Are we training the agent or is the agent production ready?")]
+        // public AgentMode Mode = AgentMode.Training;
         public AgentMode Mode = AgentMode.Training;
         [Tooltip("What is the initial checkpoint the agent will go to? This value is only for inferencing.")]
         public ushort InitCheckpointIndex;
