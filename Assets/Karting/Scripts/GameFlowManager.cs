@@ -27,6 +27,8 @@ public class GameFlowManager : MonoBehaviour
     [Tooltip("Prefab for the win game message")]
     public DisplayMessage winDisplayMessage;
 
+    public ObjectiveCompleteLaps m_ObjectiveCompleteLaps;
+
     public PlayableDirector raceCountdownTrigger;
 
     [Header("Lose")]
@@ -59,6 +61,10 @@ public class GameFlowManager : MonoBehaviour
             }
             DebugUtility.HandleErrorIfNullFindObject<ArcadeKart, GameFlowManager>(playerKart, this);
         }
+
+        m_ObjectiveCompleteLaps = FindObjectOfType<ObjectiveCompleteLaps>();
+        m_ObjectiveCompleteLaps.gameObject.SetActive(true);
+
 
         m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
 		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
