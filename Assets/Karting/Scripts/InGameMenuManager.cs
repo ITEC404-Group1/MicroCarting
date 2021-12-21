@@ -18,6 +18,7 @@ public class InGameMenuManager : MonoBehaviour
 
     //PlayerInputHandler m_PlayerInputsHandler;
     FramerateCounter m_FramerateCounter;
+    
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class InGameMenuManager : MonoBehaviour
             }
         }
     }
+ 
 
     public void ClosePauseMenu()
     {
