@@ -8,6 +8,9 @@ public enum GameState{Play, Won, Lost}
 
 public class GameFlowManager : MonoBehaviour
 {
+    private const float V = 1f;
+    public GameObject pauseScreen;
+    public bool isPaused;
     [Header("Parameters")]
     [Tooltip("Duration of the fade-to-black at the end of the game")]
     public float endSceneLoadDelay = 3f;
@@ -121,7 +124,10 @@ public class GameFlowManager : MonoBehaviour
 
     void Update()
     {
-
+if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnpause();
+        }
         if (gameState != GameState.Play)
         {
             elapsedTimeBeforeEndScene += Time.deltaTime;
@@ -207,4 +213,21 @@ public class GameFlowManager : MonoBehaviour
         {
     braking = 0;     
         }  
+
+   public void PauseUnpause()
+    {
+        isPaused = !isPaused;
+     pauseScreen.SetActive(isPaused); 
+     if(isPaused)
+     {
+         Time.timeScale=0f;
+     }
+     else{
+         Time.timeScale=1f;
+
+     } 
+    } 
+    public void st_game(){
+        Time.timeScale= V;
+    }   
 }
