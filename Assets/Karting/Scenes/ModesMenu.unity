@@ -154,8 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dependencyStatus: 0
+  position: 0
   xp: 0
-  username: 
+  won: 0
+  mapName: 
 --- !u!4 &81572921
 Transform:
   m_ObjectHideFlags: 0
@@ -1825,7 +1827,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 81572920}
         m_TargetAssemblyTypeName: FirebaseManager, KartGame
-        m_MethodName: SaveDataButton
+        m_MethodName: SaveScoreButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

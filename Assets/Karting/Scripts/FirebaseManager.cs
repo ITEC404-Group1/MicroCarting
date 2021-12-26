@@ -16,8 +16,11 @@ public class FirebaseManager : MonoBehaviour
     public DatabaseReference DBreference;
 
     [Header("Score")]
-    public int xp; 
-    public string username;
+    public int position;
+    public int xp;
+    public bool won;
+    public string mapName;
+
 
     // //Login variables
     // [Header("Login")]
@@ -44,8 +47,6 @@ public class FirebaseManager : MonoBehaviour
             {
                 //If they are avalible Initialize Firebase
                 InitializeFirebase();
-
-
             }
             else
             {
@@ -67,9 +68,14 @@ public class FirebaseManager : MonoBehaviour
         // xp = 50;
         StartCoroutine(UpdateXp(xp));
     }
-     public void LoadDataButton()
+    public void LoadDataButton()
     {
         StartCoroutine(LoadUserData());
+    }
+
+    public void SaveScoreButton()
+    {
+        StartCoroutine(SaveScore(won, position, mapName, xp));
     }
 
     public void LoginButton()
@@ -175,6 +181,26 @@ public class FirebaseManager : MonoBehaviour
 
             Debug.Log("Data has been retrieved");
             Debug.Log("xp = " + xpStr);
+        }
+    }
+
+    // ---------------GAMES Table------------------
+
+    private IEnumerator SaveScore(bool _won, int _pos, string _mapName, int _xp)
+    {
+        ScoreElement score = new ScoreElement(_won, _pos, _mapName, _xp);
+        // string json = JsonUtility.ToJson(score);
+        string json = score.ToJSON();
+        var DBTask = DBreference.Child("scores").Child(User.UserId).Push().SetRawJsonValueAsync(json);
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            Debug.Log("score saved");
         }
     }
 }
