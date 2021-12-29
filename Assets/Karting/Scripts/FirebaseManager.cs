@@ -217,12 +217,16 @@ public class FirebaseManager : MonoBehaviour
                 ScoresList.Add(scoreElement);
             }
 
-            foreach (var score in ScoresList)
-            {
-                Debug.Log("xp: "+score.XP);
-            }
             //Go to scoareboard screen
             // UIManager.instance.ScoreboardScreen();
         }
     }
+
+    public List<ScoreElement> GetUserScores()
+    {
+        StartCoroutine(LoadUserScores());
+        return ScoresList;
+    }
+
+
 }
