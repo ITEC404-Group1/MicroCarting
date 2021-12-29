@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class race_manger : MonoBehaviour
 {
+    private float dist_player;
     public CarController playerCar;
     public List<CarController> allAICars = new List<CarController>();
     public static race_manger ins;
@@ -28,31 +29,41 @@ public class race_manger : MonoBehaviour
     void Update()
     {
         posChkCounter -= Time.deltaTime;
-        if (posChkCounter <= 0)
+         if (posChkCounter <= 0)
+         {
+        playerPosition = 1;
+        foreach (CarController aiCar in allAICars)
         {
-            playerPosition = 1;
-            foreach (CarController aiCar in allAICars)
+            if (aiCar.currentLap > playerCar.currentLap)
             {
-                if (aiCar.currentLap > playerCar.currentLap)
+                playerPosition++;
+            }
+            else if (aiCar.currentLap == playerCar.currentLap)
+            {
+                if (aiCar.nextCheckpoint > playerCar.nextCheckpoint)
                 {
                     playerPosition++;
-                }else if (aiCar.currentLap == playerCar.currentLap)
+                }
+                else if (aiCar.nextCheckpoint == playerCar.nextCheckpoint)
                 {
-                    if (aiCar.nextCheckpoint > playerCar.nextCheckpoint)
+                    if (player)
+                    {
+                        dist_player = Vector3.Distance(player.position, allcheckpoints[playerCar.nextCheckpoint].transform.position);
+                    }
+                    if (Vector3.Distance(aiCar.transform.position, allcheckpoints[aiCar.nextCheckpoint].transform.position) < dist_player)
                     {
                         playerPosition++;
                     }
-                    else if (aiCar.nextCheckpoint == playerCar.nextCheckpoint)
-                    {
-                        if (Vector3.Distance(aiCar.transform.position, allcheckpoints[aiCar.nextCheckpoint].transform.position) < Vector3.Distance(aiCar.transform.position, allcheckpoints[aiCar.nextCheckpoint].transform.position))
-                        {
-                            playerPosition++;
-                        }
-                    }
                 }
             }
-            posChkCounter = timeBetweenPosCheck;
         }
+        posChkCounter = timeBetweenPosCheck;
+        }
+
+    }
+    public Transform player;
+    void Example()
+    {
 
     }
 }

@@ -66,4 +66,14 @@ public class CarController : MonoBehaviour
         }
         lapTime = 0f;
     }
+    // void RestToTrack()
+    // {
+    //     int pointToGoTo = nextCheckpoint -1;
+    
+    //     if(pointToGoTo < 0)
+    //     {
+    //         pointToGoTo = race_manger.ins.allcheckpoints[pointToGoTo].transform.position;
+    //         theRB
+    //     }
+    // }
 }
