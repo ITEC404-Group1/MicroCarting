@@ -6,7 +6,7 @@ using TMPro;
 public class UImanager : MonoBehaviour
 {
     public static UImanager instance;
-    public TMP_Text currentLapText, bestLapTimeText,lapCounterText;
+    public TMP_Text currentLapText, bestLapTimeText,lapCounterText,postionPlayer;
     private void Awake()
     {
         instance = this;

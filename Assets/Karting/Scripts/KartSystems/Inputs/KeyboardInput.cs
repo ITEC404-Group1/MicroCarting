@@ -13,7 +13,7 @@ namespace KartGame.KartSystems {
         private float hoz;
         void Update()
     {
-        hoz = movejoystick.Horizontal*.5f;
+        hoz = movejoystick.Horizontal*.8f;
     }
         public override InputData GenerateInput() {
             return new InputData
