@@ -21,6 +21,8 @@ public class FirebaseManager : MonoBehaviour
     public bool won;
     public string mapName;
 
+    public List<ScoreElement> ScoresList = new List<ScoreElement>();
+
 
     // //Login variables
     // [Header("Login")]
@@ -45,7 +47,6 @@ public class FirebaseManager : MonoBehaviour
             dependencyStatus = task.Result;
             if (dependencyStatus == DependencyStatus.Available)
             {
-                //If they are avalible Initialize Firebase
                 InitializeFirebase();
             }
             else
@@ -65,37 +66,28 @@ public class FirebaseManager : MonoBehaviour
 
     public void SaveDataButton()
     {
-        // xp = 50;
         StartCoroutine(UpdateXp(xp));
     }
     public void LoadDataButton()
     {
-        StartCoroutine(LoadUserData());
+        StartCoroutine(LoadUserScores());
     }
-
     public void SaveScoreButton()
     {
         StartCoroutine(SaveScore(won, position, mapName, xp));
     }
-
     public void LoginButton()
     {
-        Debug.Log("Logging in 1");
-
         var email = "abc@gmail.com";
         var pwd = "123456789";
-        //Call the login coroutine passing the email and password
+
         StartCoroutine(Login(email, pwd));
     }
 
     private IEnumerator Login(string _email, string _password)
     {
         Debug.Log("Logging in");
-
-        //Call the Firebase auth signin function passing the email and password
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
-        Debug.Log("LoginTask: " + LoginTask);
-
         //Wait until the task completes
         yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
 
@@ -152,7 +144,6 @@ public class FirebaseManager : MonoBehaviour
         }
         else
         {
-            //Xp is now updated
             Debug.Log("xp updated");
         }
     }
@@ -201,6 +192,37 @@ public class FirebaseManager : MonoBehaviour
         else
         {
             Debug.Log("score saved");
+        }
+    }
+
+    private IEnumerator LoadUserScores()
+    {
+        var DBTask = DBreference.Child("scores").Child(User.UserId).GetValueAsync();
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            //Loop through every users UID
+            foreach (DataSnapshot childSnapshot in snapshot.Children)
+            {
+                var json = childSnapshot.GetRawJsonValue();
+                var scoreElement = JsonUtility.FromJson<ScoreElement>(json);
+                ScoresList.Add(scoreElement);
+            }
+
+            foreach (var score in ScoresList)
+            {
+                Debug.Log("xp: "+score.XP);
+            }
+            //Go to scoareboard screen
+            // UIManager.instance.ScoreboardScreen();
         }
     }
 }
