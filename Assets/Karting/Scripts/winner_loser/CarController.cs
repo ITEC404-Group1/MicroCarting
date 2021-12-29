@@ -18,19 +18,22 @@ public class CarController : MonoBehaviour
     {
      
     }
-    void Update()
+    void FixedUpdate()
     {
+        if(!race_manger.ins.isStrating)
+        {
 
         lapTime += Time.deltaTime;
 
         var ts = System.TimeSpan.FromSeconds(lapTime);
         UImanager.instance.currentLapText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
         UImanager.instance.postionPlayer.text = race_manger.ins.playerPosition + "/" + 3;
+        }
         
     }
     public void CheckpointHit(int cpNumber)
     {
-        Debug.Log(cpNumber);
+        //Debug.Log(cpNumber);
         if (cpNumber == nextCheckpoint)
         {
             nextCheckpoint++;
@@ -60,7 +63,20 @@ public class CarController : MonoBehaviour
             UImanager.instance.lapCounterText.text = currentLap + "/" + race_manger.ins.totalLaps;
               
             }
+            if(race_manger.ins.totalLaps+1<=currentLap)
+        {
+            if(race_manger.ins.playerPosition == 1)
+            {
+                Debug.Log("winner");
+                GameFlowManager.instance.EndGame(true);
+            }else
+            {  
+               Debug.Log("loser")  ;
+               GameFlowManager.instance.EndGame(false);
             }
+        }
+            }
+            
             
 
         }

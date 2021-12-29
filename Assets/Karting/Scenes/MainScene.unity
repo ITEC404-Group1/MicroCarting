@@ -7380,6 +7380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef20d40b029c1c41a0ac51b905370c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStrating: 0
+  player: {fileID: 1304724376}
+  timeBetweenStartCount: 1
+  counterdownCurrent: 3
   playerCar: {fileID: 1910917303}
   allAICars:
   - {fileID: 691956463}
@@ -7418,7 +7422,6 @@ MonoBehaviour:
   - {fileID: 2130509123}
   - {fileID: 1534681250}
   totalLaps: 3
-  player: {fileID: 1304724376}
 --- !u!1001 &533151610
 PrefabInstance:
   m_ObjectHideFlags: 0

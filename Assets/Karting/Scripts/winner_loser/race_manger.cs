@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class race_manger : MonoBehaviour
 {
+    public bool isStrating;
+    public Transform player;
+    public float timeBetweenStartCount = 1f;
+    private float startCounter;
+    public int counterdownCurrent = 3;
     private float dist_player;
     public CarController playerCar;
     public List<CarController> allAICars = new List<CarController>();
@@ -23,47 +28,64 @@ public class race_manger : MonoBehaviour
         {
             allcheckpoints[i].cpNumber = i;
         }
+
+        isStrating = true;
+        startCounter = timeBetweenStartCount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        posChkCounter -= Time.deltaTime;
-         if (posChkCounter <= 0)
-         {
-        playerPosition = 1;
-        foreach (CarController aiCar in allAICars)
+        if (isStrating)
         {
-            if (aiCar.currentLap > playerCar.currentLap)
+            startCounter -= Time.deltaTime;
+            if (startCounter <= 0)
             {
-                playerPosition++;
-            }
-            else if (aiCar.currentLap == playerCar.currentLap)
-            {
-                if (aiCar.nextCheckpoint > playerCar.nextCheckpoint)
+                counterdownCurrent--;
+                
+                startCounter = timeBetweenStartCount;
+                if (counterdownCurrent == 0)
                 {
-                    playerPosition++;
+                    isStrating = false;
                 }
-                else if (aiCar.nextCheckpoint == playerCar.nextCheckpoint)
+            }
+        }
+        else
+        {
+
+
+            posChkCounter -= Time.deltaTime;
+            if (posChkCounter <= 0)
+            {
+                playerPosition = 1;
+                foreach (CarController aiCar in allAICars)
                 {
-                    if (player)
-                    {
-                        dist_player = Vector3.Distance(player.position, allcheckpoints[playerCar.nextCheckpoint].transform.position);
-                    }
-                    if (Vector3.Distance(aiCar.transform.position, allcheckpoints[aiCar.nextCheckpoint].transform.position) < dist_player)
+                    if (aiCar.currentLap > playerCar.currentLap)
                     {
                         playerPosition++;
                     }
+                    else if (aiCar.currentLap == playerCar.currentLap)
+                    {
+                        if (aiCar.nextCheckpoint > playerCar.nextCheckpoint)
+                        {
+                            playerPosition++;
+                        }
+                        else if (aiCar.nextCheckpoint == playerCar.nextCheckpoint)
+                        {
+                            if (player)
+                            {
+                                dist_player = Vector3.Distance(player.position, allcheckpoints[playerCar.nextCheckpoint].transform.position);
+                            }
+                            if (Vector3.Distance(aiCar.transform.position, allcheckpoints[aiCar.nextCheckpoint].transform.position) < dist_player)
+                            {
+                                playerPosition++;
+                            }
+                        }
+                    }
                 }
+                posChkCounter = timeBetweenPosCheck;
             }
         }
-        posChkCounter = timeBetweenPosCheck;
-        }
-
-    }
-    public Transform player;
-    void Example()
-    {
 
     }
 }
