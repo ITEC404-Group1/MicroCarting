@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 using KartGame.KartSystems;
 using UnityEngine.SceneManagement;
 
-public enum GameState{Play, Won, Lost}
+public enum GameState { Play, Won, Lost }
 
 public class GameFlowManager : MonoBehaviour
 {
@@ -52,7 +52,7 @@ public class GameFlowManager : MonoBehaviour
     float m_TimeLoadEndGameScene;
     string m_SceneToLoad;
     float elapsedTimeBeforeEndScene = 0;
-    [HideInInspector]public float acceleration,braking;
+    [HideInInspector] public float acceleration, braking;
     void Start()
     {
         if (autoFindKarts)
@@ -70,7 +70,7 @@ public class GameFlowManager : MonoBehaviour
 
 
         m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
-		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
+        DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
 
         m_TimeManager = FindObjectOfType<TimeManager>();
         DebugUtility.HandleErrorIfNullFindObject<TimeManager, GameFlowManager>(m_TimeManager, this);
@@ -83,7 +83,7 @@ public class GameFlowManager : MonoBehaviour
         m_TimeManager.StopRace();
         foreach (ArcadeKart k in karts)
         {
-			k.SetCanMove(false);
+            k.SetCanMove(false);
         }
 
         //run race countdown animation
@@ -93,45 +93,49 @@ public class GameFlowManager : MonoBehaviour
         StartCoroutine(CountdownThenStartRaceRoutine());
     }
 
-    IEnumerator CountdownThenStartRaceRoutine() {
+    IEnumerator CountdownThenStartRaceRoutine()
+    {
         yield return new WaitForSeconds(3f);
         StartRace();
     }
 
-    void StartRace() {
+    void StartRace()
+    {
         foreach (ArcadeKart k in karts)
         {
-			k.SetCanMove(true);
+            k.SetCanMove(true);
         }
         m_TimeManager.StartRace();
     }
 
-    void ShowRaceCountdownAnimation() {
+    void ShowRaceCountdownAnimation()
+    {
         raceCountdownTrigger.Play();
     }
 
-    IEnumerator ShowObjectivesRoutine() {
+    IEnumerator ShowObjectivesRoutine()
+    {
         while (m_ObjectiveManager.Objectives.Count == 0)
             yield return null;
         yield return new WaitForSecondsRealtime(0.2f);
         for (int i = 0; i < m_ObjectiveManager.Objectives.Count; i++)
         {
-           if (m_ObjectiveManager.Objectives[i].displayMessage)m_ObjectiveManager.Objectives[i].displayMessage.Display();
-           yield return new WaitForSecondsRealtime(1f);
+            if (m_ObjectiveManager.Objectives[i].displayMessage) m_ObjectiveManager.Objectives[i].displayMessage.Display();
+            yield return new WaitForSecondsRealtime(1f);
         }
     }
 
 
     void Update()
     {
-if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();
         }
         if (gameState != GameState.Play)
         {
             elapsedTimeBeforeEndScene += Time.deltaTime;
-            if(elapsedTimeBeforeEndScene >= endSceneLoadDelay)
+            if (elapsedTimeBeforeEndScene >= endSceneLoadDelay)
             {
 
                 float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / endSceneLoadDelay;
@@ -195,39 +199,41 @@ if(Input.GetKeyDown(KeyCode.Escape))
             loseDisplayMessage.delayBeforeShowing = delayBeforeWinMessage;
             loseDisplayMessage.gameObject.SetActive(true);
         }
-        
+
     }
     public void accelerate()
-        {
-     acceleration =1;       
-        }
+    {
+        acceleration = 1;
+    }
     public void deaccelerate()
-        {
-    acceleration = 0;     
-        } 
-     public void brake()
-        {
-    braking =-1;       
-        }
+    {
+        acceleration = 0;
+    }
+    public void brake()
+    {
+        braking = -1;
+    }
     public void debrake()
-        {
-    braking = 0;     
-        }  
+    {
+        braking = 0;
+    }
 
-   public void PauseUnpause()
+    public void PauseUnpause()
     {
         isPaused = !isPaused;
-     pauseScreen.SetActive(isPaused); 
-     if(isPaused)
-     {
-         Time.timeScale=0f;
-     }
-     else{
-         Time.timeScale=1f;
+        pauseScreen.SetActive(isPaused);
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
 
-     } 
-    } 
-    public void st_game(){
-        Time.timeScale= V;
-    }   
+        }
+    }
+    public void st_game()
+    {
+        Time.timeScale = V;
+    }
 }
