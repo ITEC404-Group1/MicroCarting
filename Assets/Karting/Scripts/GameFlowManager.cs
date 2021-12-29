@@ -53,6 +53,11 @@ public class GameFlowManager : MonoBehaviour
     string m_SceneToLoad;
     float elapsedTimeBeforeEndScene = 0;
     [HideInInspector] public float acceleration, braking;
+    public static GameFlowManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         if (autoFindKarts)
@@ -125,19 +130,18 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();
         }
+
         if (gameState != GameState.Play)
         {
             elapsedTimeBeforeEndScene += Time.deltaTime;
-            if (elapsedTimeBeforeEndScene >= endSceneLoadDelay)
+            if (race_manger.ins.totalLaps <= CarController.instance.currentLap)
             {
-
                 float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / endSceneLoadDelay;
                 endGameFadeCanvasGroup.alpha = timeRatio;
 
@@ -163,7 +167,7 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
-    void EndGame(bool win)
+    public void EndGame(bool win)
     {
         // unlocks the cursor before leaving the scene, to be able to click buttons
         Cursor.lockState = CursorLockMode.None;
