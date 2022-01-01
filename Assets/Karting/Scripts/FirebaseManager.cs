@@ -20,24 +20,7 @@ public class FirebaseManager : MonoBehaviour
     public int xp;
     public bool won;
     public string mapName;
-
     public List<ScoreElement> ScoresList = new List<ScoreElement>();
-
-
-    // //Login variables
-    // [Header("Login")]
-    // public TMP_InputField emailLoginField;
-    // public TMP_InputField passwordLoginField;
-    // public TMP_Text warningLoginText;
-    // public TMP_Text confirmLoginText;
-
-    // //Register variables
-    // [Header("Register")]
-    // public TMP_InputField usernameRegisterField;
-    // public TMP_InputField emailRegisterField;
-    // public TMP_InputField passwordRegisterField;
-    // public TMP_InputField passwordRegisterVerifyField;
-    // public TMP_Text warningRegisterText;
 
     void Awake()
     {
@@ -84,7 +67,7 @@ public class FirebaseManager : MonoBehaviour
         StartCoroutine(Login(email, pwd));
     }
 
-    private IEnumerator Login(string _email, string _password)
+    public IEnumerator Login(string _email, string _password)
     {
         Debug.Log("Logging in");
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
@@ -131,7 +114,7 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateXp(int _xp)
+    public IEnumerator UpdateXp(int _xp)
     {
         //Set the currently logged in user xp
         var DBTask = DBreference.Child("users").Child(User.UserId).Child("xp").SetValueAsync(_xp);
@@ -148,7 +131,7 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private IEnumerator LoadUserData()
+    public IEnumerator LoadUserData()
     {
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
@@ -177,7 +160,7 @@ public class FirebaseManager : MonoBehaviour
 
     // ---------------GAMES Table------------------
 
-    private IEnumerator SaveScore(bool _won, int _pos, string _mapName, int _xp)
+    public IEnumerator SaveScore(bool _won, int _pos, string _mapName, int _xp)
     {
         ScoreElement score = new ScoreElement(_won, _pos, _mapName, _xp);
         // string json = JsonUtility.ToJson(score);
@@ -195,7 +178,7 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private IEnumerator LoadUserScores()
+    public IEnumerator LoadUserScores()
     {
         var DBTask = DBreference.Child("scores").Child(User.UserId).GetValueAsync();
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
