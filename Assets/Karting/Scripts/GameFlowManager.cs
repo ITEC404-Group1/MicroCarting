@@ -136,13 +136,12 @@ public class GameFlowManager : MonoBehaviour
         {
             PauseUnpause();
         }
-        
+
         if (gameState != GameState.Play)
         {
             elapsedTimeBeforeEndScene += Time.deltaTime;
-            if (race_manger.ins.totalLaps<=CarController.instance.currentLap)
+            if (race_manger.ins.totalLaps <= CarController.instance.currentLap)
             {
-
                 float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / endSceneLoadDelay;
                 endGameFadeCanvasGroup.alpha = timeRatio;
 
@@ -168,7 +167,7 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
-   public void EndGame(bool win)
+    public void EndGame(bool win)
     {
         // unlocks the cursor before leaving the scene, to be able to click buttons
         Cursor.lockState = CursorLockMode.None;
