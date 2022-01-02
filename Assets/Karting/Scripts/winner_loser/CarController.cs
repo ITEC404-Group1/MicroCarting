@@ -65,12 +65,20 @@ public class CarController : MonoBehaviour
             }
             if(race_manger.ins.totalLaps+1<=currentLap)
         {
+            race_manger.ins.resultScreen.SetActive(true);
             if(race_manger.ins.playerPosition == 1)
             {
+                race_manger.ins.position.text="YOU FINISHED 1ST";
+                race_manger.ins.msg.text="congratulations";
                 Debug.Log("winner");
                 GameFlowManager.instance.EndGame(true);
             }else
             {  
+                if(race_manger.ins.playerPosition == 2)
+                {
+                race_manger.ins.position.text="YOU FINISHED 2ND";
+                race_manger.ins.msg.text="Try to be better";
+                }
                Debug.Log("loser")  ;
                GameFlowManager.instance.EndGame(false);
             }

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class race_manger : MonoBehaviour
 {
+    public GameObject resultScreen;
+    public TMP_Text completed,position,msg;
     public bool isStrating;
     public Transform player;
     public float timeBetweenStartCount = 1f;
