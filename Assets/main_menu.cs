@@ -10,9 +10,9 @@ public class main_menu : MonoBehaviour
     public TMP_Text totalRacing, totalWins, totalScore;
     public List<TMP_Text> MapName = new List<TMP_Text>();
     public List<TMP_Text> Position = new List<TMP_Text>();
-    public List<TMP_Text> Won = new List<TMP_Text>();
     public List<TMP_Text> XP = new List<TMP_Text>();
 
+    private int counter = 3;
     public Model.FirebaseManager FBManager;
 
     // Start is called before the first frame update
@@ -22,11 +22,21 @@ public class main_menu : MonoBehaviour
         {
             FBManager.UserId = "NEKEOhAnJNUf96EfSkZCOHwphuJ3";
         }
+        generateTable();
 
     }
 
     // Update is called once per frame
-    void Update() { }
+    void Update()
+    {
+        if (counter >= 0)
+        {
+            counter--;
+            generateTable();
+        }
+        // Debug.Log("update called");
+        // generateTable();
+    }
     public void openHelp()
     {
         helpScreen.SetActive(true);
@@ -39,8 +49,13 @@ public class main_menu : MonoBehaviour
     {
         statisticScreen.SetActive(true);
 
+        generateTable();
+    }
+
+    public void generateTable()
+    {
         var scores = FBManager.GetUserScores();
-        int limit = 3,  i = 0;
+        int limit = 3, i = 0;
         foreach (Model.ScoreElement score in scores)
         {
             if (i == limit)
@@ -49,7 +64,6 @@ public class main_menu : MonoBehaviour
             Debug.Log(score.MapName);
             MapName[i].text = "" + score.MapName;
             Position[i].text = "" + score.Position;
-            Won[i].text = "" + score.Won;
             XP[i].text = "" + score.XP;
 
             i++;
