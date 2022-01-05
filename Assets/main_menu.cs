@@ -33,11 +33,11 @@ public class main_menu : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-     for (; i < 5; i++){
-            generateTable();
-            Debug.Log("zzz");
-        }
-            
+        player.instance.loadPlayer();
+        totalRacing.text="" + player.instance.TotalGame;
+        totalScore.text="" + player.instance.score;
+       totalWins.text="" + player.instance.totalWin;
+          
     }
     public void openHelp()
     {
@@ -82,5 +82,5 @@ public class main_menu : MonoBehaviour
     {
         startScreen.SetActive(false);
     }
-
+    
 }
