@@ -7,6 +7,7 @@ public class player : MonoBehaviour
     public int TotalGame ;
     public int score ;
     public int totalWin ;
+    public string mapName;
     public static player instance;
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class player : MonoBehaviour
   TotalGame = data.TotalGame;
   score = data.score;
   totalWin = data.totalWin;
+  mapName = data.mapName;
     }
 
     public void resetButton()

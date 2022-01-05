@@ -8,11 +8,14 @@ public class player_data
     public int score;
     public int totalWin;
 
+    public string mapName;
+
     public player_data (player player)
     {
         TotalGame = player.TotalGame;
         score = player.score;
         totalWin = player.totalWin;
+        mapName = player.mapName;
 
     }
 
