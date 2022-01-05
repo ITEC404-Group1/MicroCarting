@@ -328,7 +328,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 129299359}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: KartGame.UI.win_lose_reload, KartGame
         m_MethodName: LoadTargetScene
         m_Mode: 1
         m_Arguments:
@@ -386,10 +386,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 129299354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fb0be89f0d0b38469396506a9e54beb, type: 3}
+  m_Script: {fileID: 11500000, guid: be9c794ea260d3548b17b11bb3e99cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Track1
+  SceneName: 
 --- !u!1 &134625305
 GameObject:
   m_ObjectHideFlags: 0

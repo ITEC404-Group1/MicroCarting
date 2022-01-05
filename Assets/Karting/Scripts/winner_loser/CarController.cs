@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour
 {
@@ -10,10 +11,17 @@ public class CarController : MonoBehaviour
     public int nextCheckpoint;
     public int currentLap;
     public float lapTime, bestLapTime;
+ public string mapName;
     public static CarController instance;
     private void Awake()
     {
         instance = this;
+    }
+    void Start()
+    {
+          Scene scene = SceneManager.GetActiveScene();
+          mapName = scene.name;
+
     }
    
     void FixedUpdate()

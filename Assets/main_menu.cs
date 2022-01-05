@@ -7,7 +7,7 @@ using Model;
 public class main_menu : MonoBehaviour
 {
     public GameObject helpScreen, statisticScreen, startScreen;
-    public TMP_Text totalRacing , totalWins, totalScore;
+    public TMP_Text totalRacing , totalWins, totalScore,mapName;
     public List<TMP_Text> MapName = new List<TMP_Text>();
     public List<TMP_Text> Position = new List<TMP_Text>();
     public List<TMP_Text> XP = new List<TMP_Text>();
@@ -37,6 +37,7 @@ public class main_menu : MonoBehaviour
         totalRacing.text="" + player.instance.TotalGame;
         totalScore.text="" + player.instance.score;
        totalWins.text="" + player.instance.totalWin;
+        mapName.text=player.instance.mapName;
           
     }
     public void openHelp()
