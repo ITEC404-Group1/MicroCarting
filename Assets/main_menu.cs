@@ -12,7 +12,7 @@ public class main_menu : MonoBehaviour
     public List<TMP_Text> Position = new List<TMP_Text>();
     public List<TMP_Text> XP = new List<TMP_Text>();
 
-    private int counter = 3;
+    private int i = 0;
     public Model.FirebaseManager FBManager;
 
     // Start is called before the first frame update
@@ -22,20 +22,18 @@ public class main_menu : MonoBehaviour
         {
             FBManager.UserId = "NEKEOhAnJNUf96EfSkZCOHwphuJ3";
         }
-        generateTable();
+        
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (counter >= 0)
-        {
-            counter--;
+     for (; i < 5; i++){
             generateTable();
+            Debug.Log("zzz");
         }
-        // Debug.Log("update called");
-        // generateTable();
+            
     }
     public void openHelp()
     {
@@ -48,8 +46,6 @@ public class main_menu : MonoBehaviour
     public void openStatistic()
     {
         statisticScreen.SetActive(true);
-
-        generateTable();
     }
 
     public void generateTable()
@@ -61,7 +57,7 @@ public class main_menu : MonoBehaviour
             if (i == limit)
                 break;
 
-            Debug.Log(score.MapName);
+            //Debug.Log(score.MapName);
             MapName[i].text = "" + score.MapName;
             Position[i].text = "" + score.Position;
             XP[i].text = "" + score.XP;

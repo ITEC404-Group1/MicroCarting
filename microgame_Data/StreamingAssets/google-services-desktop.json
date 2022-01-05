@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "440518983410",
+    "firebase_url": "https://microcarting-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "microcarting",
+    "storage_bucket": "microcarting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440518983410:android:7d6775b8f22188228fda6b",
+        "android_client_info": {
+          "package_name": "com.GradProject.microcarting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440518983410-n3h74au3fmrup4upqp465eebfn2414dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3DsMe2IPyTgWkPZ580ers0X3f8nu_SwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440518983410-n3h74au3fmrup4upqp465eebfn2414dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
