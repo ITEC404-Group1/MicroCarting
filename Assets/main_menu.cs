@@ -7,7 +7,7 @@ using Model;
 public class main_menu : MonoBehaviour
 {
     public GameObject helpScreen, statisticScreen, startScreen;
-    public TMP_Text totalRacing, totalWins, totalScore;
+    public TMP_Text totalRacing , totalWins, totalScore;
     public List<TMP_Text> MapName = new List<TMP_Text>();
     public List<TMP_Text> Position = new List<TMP_Text>();
     public List<TMP_Text> XP = new List<TMP_Text>();
@@ -18,6 +18,10 @@ public class main_menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player.instance.loadPlayer();
+        totalRacing.text="" + player.instance.TotalGame;
+        totalScore.text="" + player.instance.score;
+       totalWins.text="" + player.instance.totalWin;
         if (FBManager.UserId == "")
         {
             FBManager.UserId = "NEKEOhAnJNUf96EfSkZCOHwphuJ3";
@@ -44,7 +48,7 @@ public class main_menu : MonoBehaviour
         helpScreen.SetActive(false);
     }
     public void openStatistic()
-    {
+    {   
         statisticScreen.SetActive(true);
     }
 

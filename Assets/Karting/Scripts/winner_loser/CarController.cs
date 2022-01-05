@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    
     public bool isAI;
     private float aiSpeedInput;
     public int nextCheckpoint;
@@ -14,10 +15,7 @@ public class CarController : MonoBehaviour
     {
         instance = this;
     }
-    void Start()
-    {
-     
-    }
+   
     void FixedUpdate()
     {
         if(!race_manger.ins.isStrating)
@@ -68,17 +66,26 @@ public class CarController : MonoBehaviour
             race_manger.ins.resultScreen.SetActive(true);
             if(race_manger.ins.playerPosition == 1)
             {
+                player.instance.TotalGame ++;
+                player.instance.totalWin ++;
+                player.instance.score +=20;
+                player.instance.savePlayer();
                 race_manger.ins.position.text="YOU FINISHED 1ST";
                 race_manger.ins.msg.text="congratulations";
                 Debug.Log("winner");
                 GameFlowManager.instance.EndGame(true);
             }else
             {  
+                player.instance.TotalGame ++;
                 if(race_manger.ins.playerPosition == 2)
                 {
+                    player.instance.score +=10;
                 race_manger.ins.position.text="YOU FINISHED 2ND";
                 race_manger.ins.msg.text="Try to be better";
+                }else{
+                    player.instance.score +=5;
                 }
+                player.instance.savePlayer();
                Debug.Log("loser")  ;
                GameFlowManager.instance.EndGame(false);
             }
