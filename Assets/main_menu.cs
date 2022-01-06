@@ -6,8 +6,9 @@ using Model;
 
 public class main_menu : MonoBehaviour
 {
+    public GameObject openMap2;
     public GameObject helpScreen, statisticScreen, startScreen;
-    public TMP_Text totalRacing, totalWins, totalScore;
+    public TMP_Text totalRacing , totalWins, totalScore;
     public List<TMP_Text> MapName = new List<TMP_Text>();
     public List<TMP_Text> Position = new List<TMP_Text>();
     public List<TMP_Text> XP = new List<TMP_Text>();
@@ -18,6 +19,14 @@ public class main_menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player.instance.loadPlayer();
+        totalRacing.text="" + player.instance.TotalGame;
+        totalScore.text="" + player.instance.score;
+       totalWins.text="" + player.instance.totalWin;
+       if(player.instance.score>=20)
+       {
+           openMap2.SetActive(false);
+       }
         if (FBManager.UserId == "")
         {
             FBManager.UserId = "NEKEOhAnJNUf96EfSkZCOHwphuJ3";
@@ -29,11 +38,11 @@ public class main_menu : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-     for (; i < 5; i++){
-            generateTable();
-            Debug.Log("zzz");
-        }
-            
+        player.instance.loadPlayer();
+        totalRacing.text="" + player.instance.TotalGame;
+        totalScore.text="" + player.instance.score;
+       totalWins.text="" + player.instance.totalWin;
+          
     }
     public void openHelp()
     {
@@ -44,7 +53,7 @@ public class main_menu : MonoBehaviour
         helpScreen.SetActive(false);
     }
     public void openStatistic()
-    {
+    {   
         statisticScreen.SetActive(true);
     }
 
@@ -78,5 +87,5 @@ public class main_menu : MonoBehaviour
     {
         startScreen.SetActive(false);
     }
-
+    
 }

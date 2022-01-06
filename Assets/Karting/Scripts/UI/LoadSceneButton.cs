@@ -12,5 +12,12 @@ namespace KartGame.UI
         {
             SceneManager.LoadSceneAsync(SceneName);
         }
+        // void Update()
+        // {
+        //     SceneName = CarController.instance.mapName;
+        //     player.instance.loadPlayer();
+        //     player.instance.mapName = SceneName;
+        //     player.instance.savePlayer();
+        // }
     }
 }

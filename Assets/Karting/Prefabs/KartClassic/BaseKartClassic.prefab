@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 4895846115232909981}
   - component: {fileID: 4895846115232909958}
   - component: {fileID: 4895846115232909976}
+  - component: {fileID: 6793303431137980446}
   m_Layer: 2
   m_Name: BaseKartClassic
   m_TagString: Untagged
@@ -290,6 +291,21 @@ MonoBehaviour:
   TurnInputName: Horizontal
   AccelerateButtonName: Accelerate
   BrakeButtonName: Brake
+--- !u!114 &6793303431137980446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895846115232909980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb26f5f356ead964ebf549d705286fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalGame: 0
+  score: 0
+  totalWin: 0
 --- !u!1 &4895846115356922113
 GameObject:
   m_ObjectHideFlags: 0

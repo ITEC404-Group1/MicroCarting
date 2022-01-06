@@ -60,6 +60,7 @@ public class GameFlowManager : MonoBehaviour
     }
     void Start()
     {
+         Time.timeScale = 1f;
         if (autoFindKarts)
         {
             karts = FindObjectsOfType<ArcadeKart>();

@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Karting/Scenes/IntroMenu.unity
     guid: d29260d8d84c94bd7ac95807b3da99d4
   - enabled: 1
-    path: Assets/Karting/Scenes/track1.unity
+    path: Assets/Karting/Scenes/Track1.unity
     guid: 92786e23da2af4a4f8803aaf44c47121
+  - enabled: 1
+    path: Assets/Karting/Scenes/Track2.unity
+    guid: 33259ff3dc585294c921c95dd953a616
   - enabled: 1
     path: Assets/Karting/Scenes/LoseScene.unity
     guid: 9c449e01147824b419cda406398fb2e7
@@ -18,15 +21,18 @@ EditorBuildSettings:
     path: Assets/Karting/Scenes/WinScene.unity
     guid: d6801f2e59f75ee4b919cf5da4e48e3b
   - enabled: 1
+    path: Assets/Karting/Scenes/Track3.unity
+    guid: 941d2640a1cd5504bb0783f3c1d08fc0
+  - enabled: 0
     path: Assets/Karting/Scenes/ModesMenu.unity
     guid: a3a424b58ff42c3769fe47af387bc8e7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Karting/Scenes/Maps/Map2.unity
     guid: b60be520b19fbd9b99b043ccab2d2aa5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Karting/Scenes/Maps/Map1.unity
     guid: 7203b3d2280ec865687ffef346443973
-  - enabled: 1
+  - enabled: 0
     path: Assets/Karting/Scenes/Maps/Map3.unity
     guid: d09b52c8309a350efa0e60c5c394cda0
   m_configObjects: {}

@@ -39,6 +39,8 @@ public class race_manger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+                
         if (isStrating)
         {
             startCounter -= Time.deltaTime;
