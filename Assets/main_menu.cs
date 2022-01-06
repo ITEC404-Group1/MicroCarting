@@ -6,8 +6,9 @@ using Model;
 
 public class main_menu : MonoBehaviour
 {
+    public GameObject openMap2;
     public GameObject helpScreen, statisticScreen, startScreen;
-    public TMP_Text totalRacing , totalWins, totalScore,mapName;
+    public TMP_Text totalRacing , totalWins, totalScore;
     public List<TMP_Text> MapName = new List<TMP_Text>();
     public List<TMP_Text> Position = new List<TMP_Text>();
     public List<TMP_Text> XP = new List<TMP_Text>();
@@ -22,6 +23,10 @@ public class main_menu : MonoBehaviour
         totalRacing.text="" + player.instance.TotalGame;
         totalScore.text="" + player.instance.score;
        totalWins.text="" + player.instance.totalWin;
+       if(player.instance.score>=20)
+       {
+           openMap2.SetActive(false);
+       }
         if (FBManager.UserId == "")
         {
             FBManager.UserId = "NEKEOhAnJNUf96EfSkZCOHwphuJ3";
@@ -37,7 +42,6 @@ public class main_menu : MonoBehaviour
         totalRacing.text="" + player.instance.TotalGame;
         totalScore.text="" + player.instance.score;
        totalWins.text="" + player.instance.totalWin;
-        mapName.text=player.instance.mapName;
           
     }
     public void openHelp()

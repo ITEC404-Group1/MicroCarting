@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Karting/Scenes/WinScene.unity
     guid: d6801f2e59f75ee4b919cf5da4e48e3b
+  - enabled: 1
+    path: Assets/Karting/Scenes/Track3.unity
+    guid: 941d2640a1cd5504bb0783f3c1d08fc0
   - enabled: 0
     path: Assets/Karting/Scenes/ModesMenu.unity
     guid: a3a424b58ff42c3769fe47af387bc8e7

@@ -2703,6 +2703,7 @@ GameObject:
   - component: {fileID: 5416498981801269074}
   - component: {fileID: 7651278884920376134}
   - component: {fileID: 2032088287362565204}
+  - component: {fileID: 3557551262868215613}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -2812,10 +2813,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8824232397177945069}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnShowControlButtonClicked
-        m_Mode: 6
+      - m_Target: {fileID: 3557551262868215613}
+        m_TargetAssemblyTypeName: KartGame.UI.reloadtrack, KartGame
+        m_MethodName: LoadTargetScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2824,6 +2825,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &3557551262868215613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125977205322837091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7767a6d2fa7e8bb4b98ab03ead8ee8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: 
 --- !u!1 &7958354872816367513
 GameObject:
   m_ObjectHideFlags: 0
