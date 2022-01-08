@@ -8514,7 +8514,7 @@ MonoBehaviour:
   - {fileID: 1925801168}
   - {fileID: 2130509123}
   - {fileID: 1534681250}
-  totalLaps: 1
+  totalLaps: 3
 --- !u!1001 &533151610
 PrefabInstance:
   m_ObjectHideFlags: 0
