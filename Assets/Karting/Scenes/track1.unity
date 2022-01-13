@@ -7114,6 +7114,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -59.38
       objectReference: {fileID: 0}
+    - target: {fileID: 4554082768757852490, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: warningAudioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701513363370722515, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701513363370722515, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4799243954204801853, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_IsActive
@@ -16854,7 +16869,7 @@ AudioSource:
   m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -20854,6 +20869,156 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742721999218355, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722042159475, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722118371510, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722177722982, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722194687331, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722214599979, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722270311618, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722382472564, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722503729213, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722508196944, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722515257340, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722525569415, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722551179513, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722578173343, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722678086935, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722757173500, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722776988081, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722779819507, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722910947359, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722915119325, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722947641324, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742722989704759, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723053420095, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723216891060, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723339208287, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723445098572, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723660320037, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723714920683, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723820050568, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604742723825527031, guid: ecc221acf64d3644fa9f4251a0f9a638,
+        type: 3}
+      propertyPath: CollectSound
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4964755653442767221, guid: ecc221acf64d3644fa9f4251a0f9a638,
         type: 3}
